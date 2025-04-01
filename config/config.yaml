@@ -1,0 +1,91 @@
+# ==========================================
+# LocaLocaLocalize Configuration File
+# ==========================================
+
+# Application Settings
+application:
+  base_url: "https://app.guesty.com"
+  login_url: "https://app.guesty.com/login"
+  headless: false
+  default_timeout: 30000 # in milliseconds
+  stabilization_time: 1000 # in milliseconds
+  auto_discover_modals: true # automatically try to discover modals on each page
+  auto_discover_pages: false # enable automatic discovery of pages during login
+
+# Browser Settings
+browser:
+  type: "chromium" # chromium, firefox, or webkit
+  width: 2560
+  height: 1440
+  user_agent: "" # Leave empty to use default user agent
+
+# Page Definitions
+pages:
+  - name: "Dashboard"
+    url: "/dashboard"
+    modals: []
+  - name: "Reservations"
+    url: "/reservations"
+    modals:
+      - name: "Reservation_Settings"
+        selector: "button[aria-label='Config']"
+      - name: "Filters_Modal"
+        selector: "button[aria-label='Filters']"
+
+# OCR Settings
+ocr:
+  engine: "google_vision" # easyocr, google_vision
+  target_language: "fr" # The expected language for localization (fr, es, de, etc.)
+  api_key: "" # API key for Google Cloud Vision (can be set as environment variable GOOGLE_VISION_API_KEY)
+  allowed_terms: # Common terms that should be allowed in any language
+    - "OK"
+    - "Login"
+    - "Email"
+    - "PDF"
+    - "CSV"
+    - "ID"
+    
+  # Advanced OCR settings for EasyOCR
+  easyocr:
+    languages: ["fr", "en"] # Languages to detect with EasyOCR
+    gpu: false # Use GPU for OCR (requires GPU support)
+    
+  # Advanced settings for Google Cloud Vision
+  google_vision:
+    batch_size: 5 # Maximum number of images to batch in one API call
+
+# Language Detection Settings
+language_detection:
+  min_confidence: 0.6 # Minimum confidence for language detection
+  custom_dictionary: # Terms and their associated languages
+    fr:
+      - "réservation"
+      - "tableau de bord"
+      - "paramètres"
+      - "liste"
+      - "calendrier"
+      - "propriété"
+    en:
+      - "reservation"
+      - "dashboard"
+      - "settings"
+      - "list"
+      - "calendar"
+      - "property"
+
+# Output Settings
+output:
+  screenshot_dir: "./screenshots"
+  reports_dir: "./reports"
+  logs_dir: "./logs"
+  enable_html_report: true
+  enable_json_report: true
+
+# Credentials (can also be provided via environment variables)
+credentials:
+  username: "" # Leave blank for manual login
+  password: "" # Leave blank for manual login
+
+# API Keys (can also be provided via environment variables)
+api_keys:
+  google_vision: "AIzaSyD9C2WWJd0ezIi4dtfqDKH_RQ1YAtmqKRM" # Also can be set with GOOGLE_VISION_API_KEY environment variable 

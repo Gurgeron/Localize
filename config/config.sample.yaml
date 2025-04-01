@@ -1,0 +1,91 @@
+# LocaLocaLocalize Configuration
+# Copy this file to config.yaml and modify as needed
+
+# Application Settings
+application:
+  name: "Guesty PMS"
+  base_url: "https://app.guesty.com"
+  # Set this to true if you want to use full login automation (experimental)
+  auto_login: false
+  # Set this to true if you want to use headless mode (no visible browser)
+  headless: false
+  # Maximum wait time for page loads (in seconds)
+  default_timeout: 30000
+  # Time to wait after page loads before taking screenshot (helps with animations)
+  stabilization_time: 1000
+
+# Browser Settings
+browser:
+  # Browser to use (chromium, firefox, webkit)
+  type: "chromium"
+  # Browser window width
+  width: 1920
+  # Browser window height
+  height: 1080
+  # User agent to use (leave empty for default)
+  user_agent: ""
+
+# Page Definitions
+# List of pages to visit and test
+pages:
+  - name: "Dashboard"
+    url: "/dashboard"
+    # Elements to click that will open modals
+    modals:
+      - selector: ".settings-button"
+        name: "Settings Modal"
+      - selector: ".help-button"
+        name: "Help Modal"
+  
+  - name: "Reservations"
+    url: "/reservations"
+    modals:
+      - selector: ".add-reservation-button"
+        name: "Add Reservation Modal"
+  
+  # Add more pages as needed...
+
+# OCR Settings
+ocr:
+  # OCR engine to use (easyocr, tesseract)
+  engine: "easyocr"
+  # Languages to detect in the OCR process (needed for EasyOCR setup)
+  # Note: This is different from the language detection for finding English text
+  languages: ["en", "fr"]
+  # Confidence threshold for OCR detection (0.0 to 1.0)
+  confidence_threshold: 0.5
+
+# Language Detection
+language_detection:
+  # Primary language expected to be used in the UI
+  target_language: "fr"
+  # Languages to check against (text in these languages will be flagged)
+  check_languages: ["en"]
+  # Minimum text length to perform language detection
+  min_text_length: 4
+  # Confidence threshold for language detection (0.0 to 1.0)
+  confidence_threshold: 0.7
+
+# Output Settings
+output:
+  # Directory to store screenshots
+  screenshot_dir: "./screenshots"
+  # Directory to store reports
+  report_dir: "./reports"
+  # Directory to store logs
+  log_dir: "./logs"
+  # Report filename format (supports strftime formatting)
+  report_filename: "localization_report_%Y%m%d_%H%M%S.csv"
+
+# Credentials (for optional auto-login feature)
+# WARNING: Be careful not to commit real credentials to version control!
+# Better to use environment variables or .env file instead
+credentials:
+  username: "your_username"
+  password: "your_password"
+
+# API Keys (for optional cloud OCR services)
+api_keys:
+  google_cloud_vision: ""
+  aws_textract: ""
+  azure_cognitive: "" 

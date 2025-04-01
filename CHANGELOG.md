@@ -5,6 +5,19 @@ All notable changes to the LocaLocaLocalize project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.5] - 2024-04-02
+
+### Changed
+- Completely redesigned HTML report with a modern, professional appearance
+- Fixed header title visibility by changing to white text on dark backgrounds
+- Implemented CSS variables for consistent color management
+- Added sticky navigation with quick links to report sections
+- Enhanced visual hierarchy with improved typography and spacing
+- Added "Click to enlarge" hover effect on screenshots for better user experience
+- Added visual badges for issues to improve scannability
+- Improved mobile responsiveness for better viewing on all devices
+- Enhanced modal viewer for screenshots with cleaner interface
+
 ## [1.2.4] - 2024-04-02
 
 ### Fixed

@@ -5,6 +5,97 @@ All notable changes to the LocaLocaLocalize project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.4] - 2024-04-02
+
+### Fixed
+- Completely rewrote HTML report generation function to resolve persistent issues
+- Removed all variable interpolation and replaced with hardcoded values
+- Fixed image modal functionality with direct event handlers
+- Enhanced error handling for report generation
+- Improved browser opening reliability
+- Fixed issue with missing content or invalid data in reports
+- Added defensive coding for missing screenshot references
+
+## [1.2.3] - 2024-04-02
+
+### Fixed
+- Fixed HTML report generation by removing Python variable interpolation for color variables
+- Resolved the persistent issue with HTML reports not being generated
+- Simplified color definition approach to avoid naming conflicts
+- Ensured consistent browser opening of reports when generated
+
+## [1.2.2] - 2024-04-02
+
+### Fixed
+- Fixed HTML report generation by hardcoding CSS variables directly in the template
+- Resolved the "name 'primary' is not defined" error that was preventing HTML report creation
+- Ensured full compatibility with CSV, HTML, and JSON report formats
+
+## [1.2.1] - 2024-04-02
+
+### Fixed
+- Fixed HTML report to work correctly with the new OCR data structure
+- Improved CSV report generation for better spreadsheet compatibility
+- Enhanced error handling in report opening mechanism
+- Fixed issue with empty modal sections in reports
+- Added more detailed language and confidence information to reports
+
+## [1.2.0] - 2024-04-02
+
+### Fixed
+- Fixed HTML report generation with proper color variables
+- Fixed report generation in generate_all_reports method
+- Corrected handling of HTML report generation
+
+## [1.1.9] - 2024-04-02
+
+### Changed
+- Improved OCR text processing to use dedicated screenshot processing method
+- Enhanced language detection with better error handling
+- Streamlined missing translation detection process
+- Removed redundant text block analysis step
+
+## [1.1.8] - 2024-04-02
+
+### Fixed
+- Fixed OCR method name mismatch (process_image -> extract_text_from_image)
+- Removed incorrect async/await usage for OCR text extraction
+- Improved error handling in OCR processing
+
+## [1.1.7] - 2024-04-02
+
+### Added
+- Page load verification before taking screenshots
+- Comprehensive page load checks including:
+  - Network idle state
+  - DOM content loaded
+  - Loading indicators disappeared
+  - Dynamic content loaded
+- Updated color scheme with new brand colors:
+  - Primary: #111161 (Navy Blue)
+  - Secondary: #d05819 (Orange)
+  - Accent: #0c534d (Teal)
+  - Background: #f0eee8 (Off-white)
+
+### Changed
+- Enhanced screenshot capture with load verification
+- Improved error handling for page load issues
+- Updated HTML report styling with new color palette
+- Enhanced visual hierarchy in reports
+
+## [1.1.6] - 2024-04-02
+
+### Added
+- Automatic browser opening of HTML reports after generation
+- Interactive image modal for full-size screenshot viewing
+- Improved screenshot interaction with hover effects
+- Better user experience with clickable images
+
+### Changed
+- Enhanced HTML report styling for better image interaction
+- Updated screenshot display to support modal viewing
+- Improved report accessibility with interactive elements
+
 ## [1.1.5] - 2024-04-02
 
 ### Added

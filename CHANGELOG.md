@@ -5,6 +5,16 @@ All notable changes to the LocaLocaLocalize project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.6] - 2024-04-02
+
+### Added
+- Added four new pages to the configuration for testing:
+  - Multi Calendar page (/multi-calendar-v2?listed=true)
+  - Guesty Locks Manager page (/integrations/guesty-locks-manager/locks/linked)
+  - Reviews Analysis page (/reviews-analysis)
+  - Price Optimizer page (/price-optimizer)
+- Created a new branch 'pages-enhancement' for ongoing page functionality improvements
+
 ## [1.2.5] - 2024-04-02
 
 ### Changed

@@ -31,6 +31,18 @@ pages:
         selector: "button[aria-label='Config']"
       - name: "Filters_Modal"
         selector: "button[aria-label='Filters']"
+  - name: "Multi Calendar"
+    url: "/multi-calendar-v2?listed=true"
+    modals: []
+  - name: "Guesty Locks Manager"
+    url: "/integrations/guesty-locks-manager/locks/linked"
+    modals: []
+  - name: "Reviews Analysis"
+    url: "/reviews-analysis"
+    modals: []
+  - name: "Price Optimizer"
+    url: "/price-optimizer"
+    modals: []
 
 # OCR Settings
 ocr:
